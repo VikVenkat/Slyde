@@ -1,0 +1,10 @@
+Ideal flow:
+
+View:
+Site asks user to upload file
+
+Controller:
+Upload function tags file in database with an id
+
+model:
+File object has an attachment and some attributes

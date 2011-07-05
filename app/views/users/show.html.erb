@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<%= image_tag @user.doc.url %>
+
+
+
+<%= User.connection.select_all("select * from users") %>
+<br><br>
+<%= User.find(params[:id]) %>
+<br><br>
+<%= @user.doc.name %>
+<%= @user.doc.whiny %>
+<br><br>
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
