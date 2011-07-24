@@ -1,15 +1,12 @@
-<h1>Editing user</h1>
+<h1>Editing deck</h1>
 
 <%= render 'form' %>
 
-<h2>Attach Deck to this User with Paperclip</h2>
 <% form_for :deck, @deck, :url => decks_path, :html => { :multipart => true } do |form| %>
-  
   <%= form.file_field :doc %>
   <%= submit_tag value="Submit" %>
 <% end %>
 
-
-<%= link_to 'Show', @user %> |
-<%= link_to 'Back', users_path %>
+<%= link_to 'Show', @deck %> |
+<%= link_to 'Back', decks_path %>
 <%= link_to 'Home', root_path %>

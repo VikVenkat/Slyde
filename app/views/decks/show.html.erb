@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<%= image_tag @user.doc.url %>
+
+<%= Deck.connection.select_all("select * from decks") %>
+<br><br>
+<%= Deck.find(params[:id]) %>
+<br><br>
+<%= @deck.doc.name %>
+<%= @deck.doc.whiny %>
+
+
+<%= link_to 'Edit', edit_deck_path(@deck) %> |
+<%= link_to 'Back', decks_path %>
+<%= link_to 'Home', root_path %>

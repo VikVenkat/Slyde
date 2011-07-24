@@ -40,10 +40,8 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.xml
   def create
-	#paperclip says to use the below:
-	@user = User.create( params[:user] )
   
-    #@user = User.new(params[:user])
+    @user = User.new(params[:user])
 
     respond_to do |format|
       if @user.save

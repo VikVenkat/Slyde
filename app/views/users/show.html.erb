@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<%= image_tag @user.doc.url %>
+
 
 
 
@@ -8,8 +8,14 @@
 <br><br>
 <%= User.find(params[:id]) %>
 <br><br>
-<%= @user.doc.name %>
-<%= @user.doc.whiny %>
+
+<h2>Attach Deck to this User with Paperclip</h2>
+<% form_for :deck, @deck, :url => decks_path, :html => { :multipart => true } do |form| %>
+  <%= form.file_field :doc %>
+  <%= submit_tag value="Submit" %>
+<% end %>
+
 <br><br>
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
+<%= link_to 'Home', root_path %>

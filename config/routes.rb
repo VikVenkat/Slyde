@@ -1,7 +1,11 @@
 Slyde::Application.routes.draw do
+  resources :decks
   get "home/index"
-
-  resources :users
+  # get "decks/create"
+  
+  resources :users do
+      resources :decks
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
